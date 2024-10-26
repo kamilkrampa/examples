@@ -61,6 +61,9 @@ check_from_origin() {
     fi
 }
 
+run_log "Valid-for-minute-vary: First request should be served by the origin"
+response=$(curl -si "localhost:${PORT_PROXY}/service/1/valid-for-minute-vary")
+check_from_origin "$response"
 
 run_log "Valid-for-minute: First request should be served by the origin"
 response=$(curl -si "localhost:${PORT_PROXY}/service/1/valid-for-minute")

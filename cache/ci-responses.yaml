@@ -3,6 +3,11 @@ valid-for-minute:
   headers:
     cache-control: max-age=4
     custom-header: any value
+valid-for-minute-vary:
+  body: This response will stay fresh for one minute
+  headers:
+    cache-control: max-age=4
+    vary: accept, cookie
 private:
   body: This is a private response, it will not be cached by Envoy
   headers:
